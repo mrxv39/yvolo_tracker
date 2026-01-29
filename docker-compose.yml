@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:16
+    container_name: pokertracker_db
+    environment:
+      POSTGRES_DB: pokertracker
+      POSTGRES_USER: poker
+      POSTGRES_PASSWORD: pokerpass
+    ports:
+      - "5433:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    restart: unless-stopped
+
+volumes:
+  pgdata:
