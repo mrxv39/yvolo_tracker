@@ -21,3 +21,20 @@ Thumbs.db
 # IDE
 .vscode/
 .idea/
+# data / imports
+hands_inbox/
+hands_processed/
+hands_failed/
+pokertracker_hands/
+outputs/
+
+# local scratch
+before_query*.txt
+after_query*.txt
+verify_indexes.txt
+
+# python caches
+__pycache__/
+*.pyc
+.env
+.venv/

@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Players</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 16px; }
+    h1 { margin: 0 0 12px 0; }
+    .row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+    .box { border: 1px solid #ddd; padding: 12px; border-radius: 8px; background: #fafafa; }
+    input[type="text"] { padding: 8px; border: 1px solid #bbb; border-radius: 6px; min-width: 260px; }
+    button { padding: 8px 12px; border: 0; border-radius: 6px; cursor: pointer; }
+    button.primary { background: #2563eb; color: white; }
+    button.secondary { background: #e5e7eb; color: #111827; }
+    table { width: 100%; border-collapse: collapse; margin-top: 14px; }
+    th, td { border-bottom: 1px solid #eee; padding: 10px 8px; text-align: left; }
+    th { background: #f3f4f6; font-weight: 600; }
+    td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+    .muted { color: #6b7280; font-size: 12px; }
+  </style>
+</head>
+<body>
+
+  <div class="box">
+    <div class="row" style="justify-content: space-between;">
+      <div>
+        <h1>Players</h1>
+        <div class="muted">user_id: {{ user_id }}</div>
+      </div>
+
+      <form method="get" action="/ui/players" class="row">
+        <input type="hidden" name="user_id" value="{{ user_id }}" />
+        <input type="text" name="q" placeholder="Buscar por screen_name..." value="{{ search_query or '' }}" />
+        <button class="primary" type="submit">Buscar</button>
+        <a href="/ui/players?user_id={{ user_id }}">
+          <button class="secondary" type="button">Limpiar</button>
+        </a>
+      </form>
+    </div>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Jugador</th>
+        <th class="num">Hands 3H</th>
+        <th class="num">Hands HU</th>
+        <th class="num">VPIP 3H</th>
+        <th class="num">PFR 3H</th>
+        <th class="num">VPIP HU</th>
+        <th class="num">PFR HU</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for p in players %}
+      <tr>
+        <td>{{ p.screen_name }}</td>
+        <td class="num">{{ p.hands_3h }}</td>
+        <td class="num">{{ p.hands_hu }}</td>
+        <td class="num">{{ p.vpip_3h_pct }}</td>
+        <td class="num">{{ p.pfr_3h_pct }}</td>
+        <td class="num">{{ p.vpip_hu_pct }}</td>
+        <td class="num">{{ p.pfr_hu_pct }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+</body>
+</html>
