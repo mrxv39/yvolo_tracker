@@ -1,0 +1,32 @@
+# Hoja de ruta – yvolo_tracker
+
+## Implementado
+- [2h] Infraestructura base local (Docker + Postgres 16)
+- [1h] Configuración de entorno (.env, DATABASE_URL, puertos)
+- [2h] Esquema inicial de base de datos + script init_db
+- [2h] App Flask base levantada y conectada a DB
+- [1h] Desactivación del reloader para estabilidad en Windows
+- [2h] UI de import accesible sin dependencia de user_id
+- [2h] UI de players accesible sin dependencia de user_id
+- [3h] Importación de manos iPoker XML independiente de usuario
+- [2h] Lectura de manos iPoker XML desde carpeta real de ChampionPoker
+- [4h] Parseo incremental de manos iPoker XML a tablas relacionales
+- [1h] Poblado de hand_sizes para evitar errores en vistas agregadas
+
+## Por implementar – CRITICAS
+- [4h] Sistema de login con email y contraseña
+- [2h] Sección CONFIG
+- [2h] Menú principal de navegación entre secciones
+- [2h] Autoimportación de XML iPoker al iniciar la aplicación
+- [1h] Opción en CONFIG para activar/desactivar la autoimportación al inicio
+- [2h] Verificación funcional end-to-end con XML reales (import → parseo → datos visibles)
+- [1h] Confirmar movimiento correcto de XML a processed / failed tras importación
+- [2h] Manejo robusto de errores en importación con feedback claro en UI
+- [2h] Verificación de estabilidad del servidor durante importaciones grandes
+
+## Por implementar – NO CRITICAS
+- [2h] Sección Estrategias
+- [1h] Sección de usuario (perfil y ajustes básicos)
+- [6h] Sección HUD con comparación de estadísticas de jugador vs media del pool
+- [6h] Visualizador de manos estilo PokerTracker Replayer
+- [3h] Ponderación de estadísticas dando más peso a las manos del último mes
