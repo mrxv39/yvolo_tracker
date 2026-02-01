@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session sessioncode="TEST123">
+  <game gamecode="99999999" startdate="2026-01-15 20:15:30" currency="€" buyin="1.00" rake="0.10" isSNG="true" level="1">
+    <general>
+      <players>
+        <player seat="1" name="TestPlayer1" chips="1500" dealer="0" bet="30" win="0" />
+        <player seat="2" name="TestPlayer2" chips="1500" dealer="1" bet="30" win="60" />
+      </players>
+    </general>
+    <round no="0" cards="Ad,Kh" community="">
+      <action no="1" player="TestPlayer1" type="0" sum="10" />
+      <action no="2" player="TestPlayer2" type="3" sum="10" />
+      <action no="3" player="TestPlayer1" type="3" sum="0" />
+    </round>
+    <round no="1" cards="" community="7s,8c,9d">
+      <action no="4" player="TestPlayer2" type="0" sum="20" />
+      <action no="5" player="TestPlayer1" type="1" sum="0" />
+    </round>
+    <round no="2" cards="" community="Qh">
+    </round>
+    <round no="3" cards="" community="2c">
+    </round>
+    <winners>
+      <winner playerName="TestPlayer2" amount="60" type="0" />
+    </winners>
+  </game>
+</session>
